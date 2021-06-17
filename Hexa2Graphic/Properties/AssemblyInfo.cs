@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCompany("rickcsena@yahoo.com.br")]
 [assembly: AssemblyProduct("Hexa2Graphic")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
-[assembly: AssemblyTrademark("rickcsena@yahoo.com.br")]
+[assembly: AssemblyTrademark("https://github.com/rickcsena/Hexa2Graphic")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 

@@ -32,7 +32,11 @@ namespace HEXA2GRAPHIC
         public frmHexa2Graphic()
         {
             InitializeComponent();
-            this.Text = "Hexa2Graphic V" + Application.ProductVersion.Substring(0, 3);
+            this.Text = Application.ProductName.ToString()
+                + " V" + GitVersion.COUNT_PULL_REQUEST.ToString()
+                + "." + GitVersion.COUNT_RELEASE.ToString()
+                + "-" + GitVersion.HASH_SHORT
+                + " | " + GitVersion.BRANCH;
             chtData.ChartAreas[0].AxisX.Minimum = 0;
             chtData.ChartAreas[0].AxisY.Minimum = 0;
             chtData.Series[0].ChartType = SeriesChartType.Line;

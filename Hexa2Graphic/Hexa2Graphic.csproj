@@ -70,6 +70,7 @@
     <Compile Include="AboutBox.designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="GitVersion.cs" />
     <Compile Include="Hexa2Graphic.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +123,21 @@
     </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>rem @echo off
+PUSHD %251
+@cd $(SolutionDir)
+@echo "Execute prebuild_version.sh script"
+if exist  prebuild_version.sh (	
+    "%25PROGRAMW6432%25\Git\git-bash.exe" prebuild_version.sh "$(ProjectDir)"
+) else (
+    @echo "prebuild_version.sh file not exist!"
+    exit 1
+)
+POPD
+if errorlevel 1 exit 1
+</PreBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
