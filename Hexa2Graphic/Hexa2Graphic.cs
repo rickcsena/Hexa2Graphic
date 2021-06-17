@@ -33,7 +33,8 @@ namespace HEXA2GRAPHIC
         {
             InitializeComponent();
             this.Text = Application.ProductName.ToString()
-                + " V" + GitVersion.COUNT_PULL_REQUEST.ToString()
+                + " V" + Application.ProductVersion.Substring(0, 1)
+                + "." + GitVersion.COUNT_PULL_REQUEST.ToString()
                 + "." + GitVersion.COUNT_RELEASE.ToString()
                 + "-" + GitVersion.HASH_SHORT
                 + " | " + GitVersion.BRANCH;

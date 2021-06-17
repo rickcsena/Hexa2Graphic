@@ -7,7 +7,10 @@ HASH=$(git rev-parse HEAD)
 HASH_SHORT=$(git rev-parse --short HEAD)
 BRANCH=$(git rev-parse --abbrev-ref HEAD)
 COUNT_RELEASE=$(git rev-list --count --first-parent HEAD)
-COUNT_PULL_REQUEST=$(git log --grep="PR [0-99999]:*" --pretty=oneline | sed 's/://g' | wc -l)
+# TFS-GIT
+#COUNT_PULL_REQUEST=$(git log --grep="PR [0-99999]:*" --pretty=oneline | sed 's/://g' | wc -l)
+# GITHUB
+COUNT_PULL_REQUEST=$(git log --grep="pull request #[0-99999]:*" --pretty=oneline | sed 's/://g' | wc -l)
 cat > "$file" <<_EOF
 /* ========================================
  * GitVersion.cs

@@ -14,7 +14,8 @@ namespace HEXA2GRAPHIC
             InitializeComponent();
             this.Text = String.Format("About - {0}.exe", AssemblyTitle);
             this.labelProductName.Text = AssemblyProduct;
-            this.labelVersion.Text = "V" + GitVersion.COUNT_PULL_REQUEST.ToString()
+            this.labelVersion.Text = "V" + Application.ProductVersion.Substring(0, 1)
+                + "." + GitVersion.COUNT_PULL_REQUEST.ToString()
                 + "." + GitVersion.COUNT_RELEASE.ToString()
                 + "-" + GitVersion.HASH_SHORT
                 + " | " + GitVersion.BRANCH;
