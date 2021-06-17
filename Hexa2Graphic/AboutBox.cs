@@ -12,13 +12,19 @@ namespace HEXA2GRAPHIC
         public frmAboutBox()
         {
             InitializeComponent();
-            this.Text = String.Format("Sobre - {0}", AssemblyTitle);
+            this.Text = String.Format("About - {0}.exe", AssemblyTitle);
             this.labelProductName.Text = AssemblyProduct;
-            this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
+            this.labelVersion.Text = "V" + GitVersion.COUNT_PULL_REQUEST.ToString()
+                + "." + GitVersion.COUNT_RELEASE.ToString()
+                + "-" + GitVersion.HASH_SHORT
+                + " | " + GitVersion.BRANCH;
             this.labelCopyright.Text = AssemblyCopyright;
             this.labelCompanyName.Text = AssemblyCompany;
             this.textBoxDescription.Text = AssemblyDescription;
             this.labelTrademark.Text = AssemblyTradeMark;
+
+            
+                
         }
 
         #region Assembly Attribute Accessors
